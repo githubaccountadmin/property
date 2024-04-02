@@ -54,7 +54,7 @@ section {
 }
 
 section h2 {
-  color: #800080; /* Purple color */
+  color: #fff; /* Set section title color to white */
   margin-bottom: 20px;
 }
 

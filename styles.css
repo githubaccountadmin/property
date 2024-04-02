@@ -75,3 +75,25 @@ footer {
   text-align: center;
   margin-top: 50px;
 }
+
+/* Dark mode button styles */
+#dark-mode-toggle {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Dark mode button hover styles */
+#dark-mode-toggle:hover {
+  background-color: #0056b3;
+}

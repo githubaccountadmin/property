@@ -56,6 +56,8 @@ section {
 section h2 {
   color: #fff; /* Set section title color to white */
   margin-bottom: 20px;
+  border: 2px solid #5a2d8a; /* Add border around section titles */
+  padding: 10px; /* Add padding inside the border */
 }
 
 /* Gallery styles */

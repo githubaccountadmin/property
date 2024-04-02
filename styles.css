@@ -17,7 +17,7 @@ body {
 
 /* Header styles */
 header {
-  background-color: #800080; /* Purple color */
+  background-color: #5a2d8a; /* Purple color */
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -79,7 +79,7 @@ footer {
 
 /* Dark mode button styles */
 #dark-mode-toggle {
-  background-color: #800080; /* Purple color */
+  background-color: #5a2d8a; /* Purple color */
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -96,5 +96,5 @@ body.dark-mode {
 
 /* Dark mode button hover styles */
 #dark-mode-toggle:hover {
-  background-color: #663399; /* Darker shade of purple */
+  background-color: #3f1d5a; /* Darker shade of purple */
 }

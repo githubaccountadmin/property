@@ -157,8 +157,8 @@
         console.log('HandleButtonClick function called.');
         console.log('Continue button clicked!');
         console.log('Event target:', event.target);
-        event.target.blur(); // Blur the button to remove focus
         closePopup();
+        event.target.removeEventListener('click', handleButtonClick); // Remove the event listener
     }
     
     function openPopup() {

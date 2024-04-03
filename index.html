@@ -161,15 +161,12 @@
     }
     
     // Function to handle button click
-    function handleButtonClick(event) {
-      const target = event.target;
-      if (target && target.classList.contains('continue-button')) {
-        // Log a message to the console to verify if the button click event is triggered
-        console.log('Continue button clicked!');
+    function handleButtonClick() {
+      // Log a message to the console to verify if the button click event is triggered
+      console.log('Continue button clicked!');
     
-        // Call the closePopup function to close the popup
-        closePopup();
-      }
+      // Call the closePopup function to close the popup
+      closePopup();
     }
     
     // Function to open the popup
@@ -182,8 +179,11 @@
           popupContainer.classList.add('popup-container');
           popupContainer.innerHTML = data;
     
-          // Attach event listener to the popup container for button clicks
-          popupContainer.addEventListener('click', handleButtonClick);
+          // Find the "Continue" button inside the popup
+          const continueButton = popupContainer.querySelector('.continue-button');
+    
+          // Attach event listener to the "Continue" button
+          continueButton.addEventListener('click', handleButtonClick);
     
           // Append the popup container to the body
           document.body.appendChild(popupContainer);

@@ -4,7 +4,7 @@ function openPopup() {
         .then(response => response.text())
         .then(data => {
             const popupContainer = document.createElement('div');
-            popupContainer.id = popupContainerId;
+            // popupContainer.id = popupContainerId; // Commented out as popupContainerId is not defined
             popupContainer.classList.add('popup-container');
             popupContainer.innerHTML = data;
     
@@ -25,7 +25,7 @@ function openPopup() {
             // Disable focus on the body element
             document.body.setAttribute('tabindex', '-1');
     
-            console.log('Popup opened:', popupContainerId);
+            console.log('Popup opened:', popupContainer);
             console.log('Currently focused element:', document.activeElement);
         })
         .catch(error => console.error('Error loading popup content:', error));

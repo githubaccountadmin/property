@@ -153,6 +153,15 @@
   <div class="popup-container"></div>
   
   <script>
+    // Define the closePopup function globally
+    function closePopup() {
+      try {
+        document.querySelector('.popup-container').style.display = 'none';
+      } catch (error) {
+        console.error('Error closing popup:', error);
+      }
+    }
+  
     // Dynamically create the popup container element
     const popupContainer = document.createElement('div');
     popupContainer.classList.add('popup-container');
@@ -165,17 +174,6 @@
         popupContainer.innerHTML = data;
       })
       .catch(error => console.error('Error loading popup content:', error));
-  </script>
-
-  <script>
-    // Define the closePopup function globally
-    window.closePopup = function() {
-      try {
-        document.querySelector('.popup-container').style.display = 'none';
-      } catch (error) {
-        console.error('Error closing popup:', error);
-      }
-    };
   </script>
 
   <section id="safety" style="margin-bottom: 40px;">

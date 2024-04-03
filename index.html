@@ -190,12 +190,8 @@
           // Append the popup container to the body
           document.body.appendChild(popupContainer);
 
-          // Check if the "Continue" button has focus
-          if (document.activeElement === continueButton) {
-            console.log('Continue button has focus.');
-          } else {
-            console.log('Continue button does not have focus.');
-          }
+          // Set focus to the "Continue" button
+          continueButton.focus();
         })
         .catch(error => console.error('Error loading popup content:', error));
     }

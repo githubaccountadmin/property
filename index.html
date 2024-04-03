@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Oasis</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="import" href="pop.html">
   <style>
     .mint-button-container {
       position: fixed;
@@ -149,6 +148,19 @@
       <p>Show up on your booked date, and immerse yourself in the beauty of the Ozarks!</p>
     </div>
   </section>
+
+  <script>
+    // Dynamically load the popup content from pop.html
+    fetch('pop.html')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('.popup-container').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading popup content:', error));
+  </script>
+
+  <!-- Add a container for the popup content -->
+  <div class="popup-container"></div>
 
   <section id="safety" style="margin-bottom: 40px;">
     <h2>Safety Information</h2>

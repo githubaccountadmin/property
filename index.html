@@ -158,9 +158,7 @@
       try {
         console.log('Closing popup...');
         const popupContainer = document.querySelector('.popup-container');
-        const popupContent = document.querySelector('.popup-content');
-        popupContainer.removeChild(popupContent); // Remove the popup content from the popup container
-        popupContainer.style.display = 'none';
+        popupContainer.parentNode.removeChild(popupContainer); // Remove the popup container from its parent
       } catch (error) {
         console.error('Error closing popup:', error);
       }

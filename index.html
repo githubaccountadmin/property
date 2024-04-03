@@ -158,8 +158,12 @@
       console.log('Closing popup...');
       const popupContainer = document.querySelector('.popup-container');
       console.log('Popup container:', popupContainer); // Log the popup container to verify its existence
-      popupContainer.remove(); // Remove the popup container from the DOM
-      console.log('Popup closed.'); // Log message indicating the popup is closed
+      if (popupContainer) {
+        popupContainer.remove(); // Remove the popup container from the DOM
+        console.log('Popup closed.'); // Log message indicating the popup is closed
+      } else {
+        console.log('Popup container not found.'); // Log a message if the popup container is not found
+      }
     }
     
     // Function to handle button click

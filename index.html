@@ -152,13 +152,14 @@
   <div class="popup-container"></div>
   
   <script>
+    let continueButton; // Define the continue button variable outside the function
+
     function handleButtonClick(event) {
         event.preventDefault(); // Prevent default behavior
         console.log('HandleButtonClick function called.');
         console.log('Continue button clicked!');
         console.log('Event target:', event.target);
         closePopup();
-        event.target.removeEventListener('click', handleButtonClick); // Remove the event listener
     }
     
     function openPopup() {
@@ -178,10 +179,14 @@
             popupContainer.classList.add('popup-container');
             popupContainer.innerHTML = data;
     
-            const continueButton = popupContainer.querySelector('.continue-button');
+            continueButton = popupContainer.querySelector('.continue-button');
     
-            console.log("Attaching event listener to the Continue button");
-            continueButton.addEventListener('click', handleButtonClick);
+            // Check if the continue button already has the event listener attached
+            if (!continueButton.hasAttribute('data-event-listener')) {
+                console.log("Attaching event listener to the Continue button");
+                continueButton.addEventListener('click', handleButtonClick);
+                continueButton.setAttribute('data-event-listener', 'true'); // Set attribute to indicate event listener attached
+            }
     
             document.body.appendChild(popupContainer);
     
@@ -210,9 +215,6 @@
     
         // Restore focus on the body element
         document.body.removeAttribute('tabindex');
-        document.body.focus();
-    
-        console.log('Currently focused element:', document.activeElement);
     }
     
     console.log("Opening popup");

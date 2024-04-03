@@ -1,6 +1,6 @@
 function openPopup() {
     console.log("Opening popup");
-    fetch('popup.html')
+    fetch('pop.html')
         .then(response => response.text())
         .then(data => {
             const popupContainer = document.createElement('div');

@@ -209,8 +209,11 @@
         if (popupContainer) {
             popupContainer.remove();
             console.log('Popup closed.');
-            // Remove event listener when closing the popup
-            continueButton.removeEventListener('click', handleButtonClick);
+            // Remove event listener only if it exists
+            if (continueButton) {
+                continueButton.removeEventListener('click', handleButtonClick);
+                console.log('Event listener removed.');
+            }
         } else {
             console.log('Popup container not found.');
         }
@@ -218,7 +221,6 @@
         // Restore focus on the body element
         document.body.removeAttribute('tabindex');
     }
-    
     console.log("Opening popup");
     openPopup();
   </script>

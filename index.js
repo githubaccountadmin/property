@@ -46,9 +46,10 @@ function closePopup() {
 }
 
 function handleButtonClick() {
-  console.log("HandleButtonClick function called.");
-  console.log("Continue button clicked!");
-  closePopup();
+    console.log("HandleButtonClick function called.");
+    console.log("Continue button clicked!");
+    closePopup();
+    console.log('Currently focused element after closing popup:', document.activeElement);
 }
 
 // Call the openPopup function to display the popup

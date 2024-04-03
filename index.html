@@ -176,6 +176,9 @@
         // Add an event listener to the button after the content is loaded
         const continueButton = popupContainer.querySelector('#continueButton');
         continueButton.addEventListener('click', function() {
+          // Log a message to the console to verify if the button click event is triggered
+          console.log('Continue button clicked!');
+          
           // Call the closePopup function defined globally
           closePopup();
         });

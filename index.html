@@ -163,7 +163,7 @@
     // Function to handle button click
     function handleButtonClick(event) {
       const target = event.target;
-      if (target && target.id === 'continueButton') {
+      if (target && target.classList.contains('continue-button')) {
         // Log a message to the console to verify if the button click event is triggered
         console.log('Continue button clicked!');
     
@@ -171,9 +171,6 @@
         closePopup();
       }
     }
-    
-    // Attach event listener to the document for button clicks
-    document.addEventListener('click', handleButtonClick);
     
     // Function to open the popup
     function openPopup() {
@@ -184,6 +181,9 @@
           const popupContainer = document.createElement('div');
           popupContainer.classList.add('popup-container');
           popupContainer.innerHTML = data;
+    
+          // Attach event listener to the popup container for button clicks
+          popupContainer.addEventListener('click', handleButtonClick);
     
           // Append the popup container to the body
           document.body.appendChild(popupContainer);

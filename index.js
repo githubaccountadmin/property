@@ -1,3 +1,11 @@
+// Function to handle the continue button click event
+function handleContinueButtonClick(event) {
+    console.log("Continue button clicked!");
+    event.preventDefault(); // Prevent default behavior
+    handleButtonClick(); // Call the function to handle button click action
+}
+
+// Function to open the popup
 function openPopup() {
     console.log("Opening popup");
     fetch('pop.html')
@@ -9,15 +17,7 @@ function openPopup() {
 
             const continueButton = popupContainer.querySelector('.continue-button');
 
-            if (!continueButton.hasAttribute('data-event-listener')) {
-                console.log("Attaching event listener to the Continue button");
-                continueButton.setAttribute('data-event-listener', 'true');
-                continueButton.addEventListener('mousedown', function(event) {
-                    console.log("Continue button clicked!");
-                    event.preventDefault(); // Prevent default behavior
-                    handleButtonClick();
-                });
-            }
+            continueButton.addEventListener('mousedown', handleContinueButtonClick);
 
             document.body.appendChild(popupContainer);
 
@@ -33,6 +33,7 @@ function openPopup() {
         .catch(error => console.error('Error loading popup content:', error));
 }
 
+// Function to close the popup
 function closePopup() {
     console.log('Closing popup...');
     const popupContainer = document.querySelector('.popup-container');
@@ -48,6 +49,7 @@ function closePopup() {
     document.body.removeAttribute('tabindex');
 }
 
+// Function to handle button click action
 function handleButtonClick() {
     console.log("HandleButtonClick function called.");
     closePopup();

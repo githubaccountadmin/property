@@ -153,26 +153,45 @@
   <div class="popup-container"></div>
   
   <script>
-    // Define the closePopup function globally
+    // Function to close the popup
     function closePopup() {
       try {
-        document.querySelector('.popup-container').style.display = 'none';
+        const popupContainer = document.querySelector('.popup-container');
+        popupContainer.style.display = 'none';
+        document.body.removeChild(popupContainer); // Remove the popup container from the DOM
       } catch (error) {
         console.error('Error closing popup:', error);
       }
     }
     
-    // Add an event listener to the button after the content is loaded
-    document.addEventListener('DOMContentLoaded', function () {
-      const continueButton = document.querySelector('#continueButton');
-      continueButton.addEventListener('click', function () {
-        // Log a message to the console to verify if the button click event is triggered
-        console.log('Continue button clicked!');
+    // Function to open the popup
+    function openPopup() {
+      fetch('pop.html')
+        .then(response => response.text())
+        .then(data => {
+          // Create a div element to hold the popup content
+          const popupContainer = document.createElement('div');
+          popupContainer.classList.add('popup-container');
+          popupContainer.innerHTML = data;
     
-        // Call the closePopup function defined globally
-        closePopup();
-      });
-    });
+          // Append the popup container to the body
+          document.body.appendChild(popupContainer);
+    
+          // Add an event listener to the button after the content is loaded
+          const continueButton = popupContainer.querySelector('#continueButton');
+          continueButton.addEventListener('click', function () {
+            // Log a message to the console to verify if the button click event is triggered
+            console.log('Continue button clicked!');
+    
+            // Call the closePopup function to close the popup
+            closePopup();
+          });
+        })
+        .catch(error => console.error('Error loading popup content:', error));
+    }
+    
+    // Call the openPopup function to display the popup
+    openPopup();
   </script>
 
   <section id="safety" style="margin-bottom: 40px;">

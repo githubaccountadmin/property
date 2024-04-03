@@ -176,25 +176,31 @@
     function openPopup() {
       console.log('Opening popup...');
       const popupContainerId = 'popup-container-' + Date.now();
-      fetch('pop.html')
-        .then(response => response.text())
-        .then(data => {
-          const popupContainer = document.createElement('div');
-          popupContainer.id = popupContainerId;
-          popupContainer.classList.add('popup-container');
-          popupContainer.innerHTML = data;
-          
-          const continueButton = popupContainer.querySelector('.continue-button');
-          
-          console.log("Attaching event listener to the Continue button");
-          continueButton.addEventListener('click', handleButtonClick);
-          
-          document.body.appendChild(popupContainer);
-          
-          continueButton.focus();
-          console.log('Popup opened:', popupContainerId);
-        })
-        .catch(error => console.error('Error loading popup content:', error));
+      fetch('pop.html', {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      })
+      .then(response => response.text())
+      .then(data => {
+        const popupContainer = document.createElement('div');
+        popupContainer.id = popupContainerId;
+        popupContainer.classList.add('popup-container');
+        popupContainer.innerHTML = data;
+        
+        const continueButton = popupContainer.querySelector('.continue-button');
+        
+        console.log("Attaching event listener to the Continue button");
+        continueButton.addEventListener('click', handleButtonClick);
+        
+        document.body.appendChild(popupContainer);
+        
+        continueButton.focus();
+        console.log('Popup opened:', popupContainerId);
+      })
+      .catch(error => console.error('Error loading popup content:', error));
     }
     
     console.log("Opening popup");

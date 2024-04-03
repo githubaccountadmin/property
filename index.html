@@ -161,29 +161,18 @@
         console.error('Error closing popup:', error);
       }
     }
-  
-    // Dynamically create the popup container element
-    const popupContainer = document.createElement('div');
-    popupContainer.classList.add('popup-container');
-    document.body.appendChild(popupContainer);
-  
-    // Dynamically load the popup content from pop.html
-    fetch('pop.html')
-      .then(response => response.text())
-      .then(data => {
-        popupContainer.innerHTML = data;
-        
-        // Add an event listener to the button after the content is loaded
-        const continueButton = popupContainer.querySelector('#continueButton');
-        continueButton.addEventListener('click', function() {
-          // Log a message to the console to verify if the button click event is triggered
-          console.log('Continue button clicked!');
-          
-          // Call the closePopup function defined globally
-          closePopup();
-        });
-      })
-      .catch(error => console.error('Error loading popup content:', error));
+    
+    // Add an event listener to the button after the content is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      const continueButton = document.querySelector('#continueButton');
+      continueButton.addEventListener('click', function () {
+        // Log a message to the console to verify if the button click event is triggered
+        console.log('Continue button clicked!');
+    
+        // Call the closePopup function defined globally
+        closePopup();
+      });
+    });
   </script>
 
   <section id="safety" style="margin-bottom: 40px;">

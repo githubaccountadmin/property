@@ -153,11 +153,12 @@
   
   <script>
     function handleButtonClick(event) {
-      event.preventDefault(); // Prevent default behavior
-      console.log('HandleButtonClick function called.');
-      console.log('Continue button clicked!');
-      console.log('Event target:', event.target);
-      closePopup();
+        event.preventDefault(); // Prevent default behavior
+        console.log('HandleButtonClick function called.');
+        console.log('Continue button clicked!');
+        console.log('Event target:', event.target);
+        event.target.blur(); // Blur the button to remove focus
+        closePopup();
     }
     
     function openPopup() {

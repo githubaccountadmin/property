@@ -160,6 +160,21 @@
       popupContainer.remove(); // Remove the popup container from the DOM
     }
     
+    // Function to handle button click
+    function handleButtonClick(event) {
+      const target = event.target;
+      if (target && target.id === 'continueButton') {
+        // Log a message to the console to verify if the button click event is triggered
+        console.log('Continue button clicked!');
+    
+        // Call the closePopup function to close the popup
+        closePopup();
+      }
+    }
+    
+    // Attach event listener to the document for button clicks
+    document.addEventListener('click', handleButtonClick);
+    
     // Function to open the popup
     function openPopup() {
       fetch('pop.html')
@@ -172,16 +187,6 @@
     
           // Append the popup container to the body
           document.body.appendChild(popupContainer);
-    
-          // Add an event listener to the button after the content is appended to the DOM
-          const continueButton = popupContainer.querySelector('#continueButton');
-          continueButton.addEventListener('click', function () {
-            // Log a message to the console to verify if the button click event is triggered
-            console.log('Continue button clicked!');
-    
-            // Call the closePopup function to close the popup
-            closePopup();
-          });
         })
         .catch(error => console.error('Error loading popup content:', error));
     }

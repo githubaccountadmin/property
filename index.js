@@ -50,3 +50,7 @@ function handleButtonClick() {
   console.log("Continue button clicked!");
   closePopup();
 }
+
+// Call the openPopup function to display the popup
+console.log("Opening popup");
+openPopup();

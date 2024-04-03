@@ -168,10 +168,14 @@
   </script>
 
   <script>
-    // Define the closePopup function
-    function closePopup() {
-      document.querySelector('.popup-container').style.display = 'none';
-    }
+    // Define the closePopup function globally
+    window.closePopup = function() {
+      try {
+        document.querySelector('.popup-container').style.display = 'none';
+      } catch (error) {
+        console.error('Error closing popup:', error);
+      }
+    };
   </script>
 
   <section id="safety" style="margin-bottom: 40px;">

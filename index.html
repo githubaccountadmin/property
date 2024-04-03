@@ -209,7 +209,8 @@
     
         // Restore focus on the body element
         document.body.removeAttribute('tabindex');
-
+        document.body.focus();
+    
         console.log('Currently focused element:', document.activeElement);
     }
     

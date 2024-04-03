@@ -155,15 +155,11 @@
   <script>
     // Function to close the popup
     function closePopup() {
-      try {
-        console.log('Closing popup...');
-        const popupContainer = document.querySelector('.popup-container');
-        popupContainer.parentNode.removeChild(popupContainer); // Remove the popup container from its parent
-      } catch (error) {
-        console.error('Error closing popup:', error);
-      }
+      console.log('Closing popup...');
+      const popupContainer = document.querySelector('.popup-container');
+      popupContainer.remove(); // Remove the popup container from the DOM
     }
-  
+    
     // Function to open the popup
     function openPopup() {
       fetch('pop.html')
@@ -173,23 +169,23 @@
           const popupContainer = document.createElement('div');
           popupContainer.classList.add('popup-container');
           popupContainer.innerHTML = data;
-  
+    
           // Append the popup container to the body
           document.body.appendChild(popupContainer);
-  
-          // Add an event listener to the button
+    
+          // Add an event listener to the button after the content is appended to the DOM
           const continueButton = popupContainer.querySelector('#continueButton');
           continueButton.addEventListener('click', function () {
             // Log a message to the console to verify if the button click event is triggered
             console.log('Continue button clicked!');
-  
+    
             // Call the closePopup function to close the popup
             closePopup();
           });
         })
         .catch(error => console.error('Error loading popup content:', error));
     }
-  
+    
     // Call the openPopup function to display the popup
     openPopup();
   </script>

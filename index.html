@@ -158,6 +158,7 @@
       console.log('Closing popup...');
       const popupContainer = document.querySelector('.popup-container');
       popupContainer.remove(); // Remove the popup container from the DOM
+      console.log('Popup closed.'); // Log message indicating the popup is closed
     }
     
     // Function to handle button click
@@ -183,6 +184,7 @@
           const continueButton = popupContainer.querySelector('.continue-button');
     
           // Attach event listener to the "Continue" button
+          console.log("Attaching event listener to the Continue button");
           continueButton.addEventListener('click', handleButtonClick);
     
           // Append the popup container to the body
@@ -194,6 +196,7 @@
     }
     
     // Call the openPopup function to display the popup
+    console.log("Opening popup");
     openPopup();
   </script>
 

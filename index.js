@@ -9,10 +9,12 @@ function openPopup() {
     
             continueButton = popupContainer.querySelector('.continue-button');
     
-            // Check if the continue button already has the event listener attached
             if (!continueButton.hasAttribute('data-event-listener')) {
                 console.log("Attaching event listener to the Continue button");
-                continueButton.addEventListener('click', handleButtonClick);
+                continueButton.addEventListener('click', function(event) {
+                    console.log("Button clicked:", event.target);
+                    handleButtonClick();
+                });
                 continueButton.setAttribute('data-event-listener', 'true'); // Set attribute to indicate event listener attached
             }
     
@@ -48,6 +50,7 @@ function closePopup() {
 function handleButtonClick() {
     console.log("HandleButtonClick function called.");
     console.log("Continue button clicked!");
+    continueButton.blur(); // Remove focus from the button
     closePopup();
     console.log('Currently focused element after closing popup:', document.activeElement);
 }

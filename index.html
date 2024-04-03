@@ -209,6 +209,8 @@
         if (popupContainer) {
             popupContainer.remove();
             console.log('Popup closed.');
+            // Remove event listener when closing the popup
+            continueButton.removeEventListener('click', handleButtonClick);
         } else {
             console.log('Popup container not found.');
         }

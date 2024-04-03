@@ -65,8 +65,16 @@
       <div class="popup-message">
         You have the opportunity to be part of something unique... our NFT collection grants you access to one of the world's most unique and beautiful private properties. By minting your NFT, you are granted access to this property, allowing you to create a campsite and stay as long as you have another NFT. Some of the rarer NFTs in our collection allow you to stay multiple nights, with the rarest granting up to one week. This unique opportunity is unlike anything else in the world! So mint an NFT today and gain access to your own private campground where like-minded people come together to create a village built by cryptocurrency!
       </div>
-      <button class="continue-button" onclick="closePopup()">Continue</button>
+      <button id="continueButton" class="continue-button">Continue</button>
     </div>
   </div>
+
+  <script>
+    // Add an event listener to the button
+    document.getElementById('continueButton').addEventListener('click', function() {
+      // Call the closePopup function defined globally
+      closePopup();
+    });
+  </script>
 </body>
 </html>

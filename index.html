@@ -199,7 +199,11 @@
         
         document.body.appendChild(popupContainer);
         
-        continueButton.focus();
+        // Set focus on the continue button with a slight delay
+        setTimeout(() => {
+            continueButton.focus();
+        }, 100);
+        
         console.log('Popup opened:', popupContainerId);
       })
       .catch(error => console.error('Error loading popup content:', error));

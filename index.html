@@ -153,57 +153,48 @@
   <div class="popup-container"></div>
   
   <script>
-    // Function to close the popup
     function closePopup() {
       console.log('Closing popup...');
       const popupContainer = document.querySelector('.popup-container');
-      console.log('Popup container:', popupContainer); // Log the popup container to verify its existence
+      console.log('Popup container:', popupContainer);
       if (popupContainer) {
-        popupContainer.remove(); // Remove the popup container from the DOM
-        console.log('Popup closed.'); // Log message indicating the popup is closed
+        popupContainer.remove();
+        console.log('Popup closed.');
       } else {
-        console.log('Popup container not found.'); // Log a message if the popup container is not found
+        console.log('Popup container not found.');
       }
     }
     
-    // Function to handle button click
     function handleButtonClick() {
-      console.log('HandleButtonClick function called.'); // Add this line to log when the function is called
-      
-      // Log a message to the console to verify if the button click event is triggered
+      console.log('HandleButtonClick function called.');
       console.log('Continue button clicked!');
-    
-      // Call the closePopup function to close the popup
       closePopup();
     }
     
-    // Function to open the popup
     function openPopup() {
+      console.log('Opening popup...');
+      const popupContainerId = 'popup-container-' + Date.now();
       fetch('pop.html')
         .then(response => response.text())
         .then(data => {
-          // Create a div element to hold the popup content
           const popupContainer = document.createElement('div');
+          popupContainer.id = popupContainerId;
           popupContainer.classList.add('popup-container');
           popupContainer.innerHTML = data;
-    
-          // Find the "Continue" button inside the popup
+          
           const continueButton = popupContainer.querySelector('.continue-button');
-    
-          // Attach event listener to the "Continue" button
+          
           console.log("Attaching event listener to the Continue button");
           continueButton.addEventListener('click', handleButtonClick);
-    
-          // Append the popup container to the body
+          
           document.body.appendChild(popupContainer);
-
-          // Set focus to the "Continue" button
+          
           continueButton.focus();
+          console.log('Popup opened:', popupContainerId);
         })
         .catch(error => console.error('Error loading popup content:', error));
     }
     
-    // Call the openPopup function to display the popup
     console.log("Opening popup");
     openPopup();
   </script>

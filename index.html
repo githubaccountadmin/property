@@ -189,6 +189,9 @@
         popupContainer.id = popupContainerId;
         popupContainer.classList.add('popup-container');
         popupContainer.innerHTML = data;
+
+        // Log the currently focused element
+        console.log('Currently focused element:', document.activeElement);
         
         const continueButton = popupContainer.querySelector('.continue-button');
         

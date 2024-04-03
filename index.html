@@ -172,6 +172,12 @@
       .then(response => response.text())
       .then(data => {
         popupContainer.innerHTML = data;
+        
+        // Add an event listener to the button after the content is loaded
+        const continueButton = popupContainer.querySelector('#continueButton');
+        continueButton.addEventListener('click', function() {
+          closePopup();
+        });
       })
       .catch(error => console.error('Error loading popup content:', error));
   </script>

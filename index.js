@@ -6,26 +6,26 @@ function openPopup() {
             const popupContainer = document.createElement('div');
             popupContainer.classList.add('popup-container');
             popupContainer.innerHTML = data;
-    
-            continueButton = popupContainer.querySelector('.continue-button');
-    
+
+            const continueButton = popupContainer.querySelector('.continue-button');
+
             if (!continueButton.hasAttribute('data-event-listener')) {
                 console.log("Attaching event listener to the Continue button");
-                continueButton.addEventListener('click', function(event) {
-                    console.log("Button clicked:", event.target);
+                continueButton.setAttribute('data-event-listener', 'true'); // Set attribute to indicate event listener attached
+                continueButton.addEventListener('click', function() {
+                    console.log("Continue button clicked!");
                     handleButtonClick();
                 });
-                continueButton.setAttribute('data-event-listener', 'true'); // Set attribute to indicate event listener attached
             }
-    
+
             document.body.appendChild(popupContainer);
-    
+
             // Set focus on the continue button
             continueButton.focus();
-    
+
             // Disable focus on the body element
             document.body.setAttribute('tabindex', '-1');
-    
+
             console.log('Popup opened:', popupContainer);
             console.log('Currently focused element:', document.activeElement);
         })
@@ -42,15 +42,13 @@ function closePopup() {
     } else {
         console.log('Popup container not found.');
     }
-    
+
     // Restore focus on the body element
     document.body.removeAttribute('tabindex');
 }
 
 function handleButtonClick() {
     console.log("HandleButtonClick function called.");
-    console.log("Continue button clicked!");
-    continueButton.blur(); // Remove focus from the button
     closePopup();
     console.log('Currently focused element after closing popup:', document.activeElement);
 }

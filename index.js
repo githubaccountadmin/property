@@ -11,7 +11,7 @@ function openPopup() {
 
             if (!continueButton.hasAttribute('data-event-listener')) {
                 console.log("Attaching event listener to the Continue button");
-                continueButton.setAttribute('data-event-listener', 'true'); // Set attribute to indicate event listener attached
+                continueButton.setAttribute('data-event-listener', 'true');
                 continueButton.addEventListener('mousedown', function(event) {
                     console.log("Continue button clicked!");
                     event.preventDefault(); // Prevent default behavior

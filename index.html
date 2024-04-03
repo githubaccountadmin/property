@@ -161,43 +161,36 @@
     }
     
     function openPopup() {
-        console.log('Opening popup...');
-        const popupContainerId = 'popup-container-' + Date.now();
-        fetch('pop.html', {
-            headers: {
-                'Cache-Control': 'no-cache, no-store, must-revalidate',
-                'Pragma': 'no-cache',
-                'Expires': '0'
-            }
-        })
-        .then(response => response.text())
-        .then(data => {
-            const popupContainer = document.createElement('div');
-            popupContainer.id = popupContainerId;
-            popupContainer.classList.add('popup-container');
-            popupContainer.innerHTML = data;
+        console.log("Opening popup");
+        fetch('popup.html')
+            .then(response => response.text())
+            .then(data => {
+                const popupContainer = document.createElement('div');
+                popupContainer.id = popupContainerId;
+                popupContainer.classList.add('popup-container');
+                popupContainer.innerHTML = data;
     
-            continueButton = popupContainer.querySelector('.continue-button');
+                continueButton = popupContainer.querySelector('.continue-button');
     
-            // Check if the continue button already has the event listener attached
-            if (!continueButton.hasAttribute('data-event-listener')) {
-                console.log("Attaching event listener to the Continue button");
-                continueButton.addEventListener('click', handleButtonClick);
-                continueButton.setAttribute('data-event-listener', 'true'); // Set attribute to indicate event listener attached
-            }
+                // Check if the continue button already has the event listener attached
+                if (!continueButton.hasAttribute('data-event-listener')) {
+                    console.log("Attaching event listener to the Continue button");
+                    continueButton.addEventListener('click', handleButtonClick);
+                    continueButton.setAttribute('data-event-listener', 'true'); // Set attribute to indicate event listener attached
+                }
     
-            document.body.appendChild(popupContainer);
+                document.body.appendChild(popupContainer);
     
-            // Set focus on the continue button
-            continueButton.focus();
+                // Set focus on the continue button
+                continueButton.focus();
     
-            // Disable focus on the body element
-            document.body.setAttribute('tabindex', '-1');
+                // Disable focus on the body element
+                document.body.setAttribute('tabindex', '-1');
     
-            console.log('Popup opened:', popupContainerId);
-            console.log('Currently focused element:', document.activeElement);
-        })
-        .catch(error => console.error('Error loading popup content:', error));
+                console.log('Popup opened:', popupContainerId);
+                console.log('Currently focused element:', document.activeElement);
+            })
+            .catch(error => console.error('Error loading popup content:', error));
     }
     
     function closePopup() {
@@ -207,11 +200,6 @@
         if (popupContainer) {
             popupContainer.remove();
             console.log('Popup closed.');
-            // Remove event listener only if it exists
-            if (continueButton) {
-                continueButton.removeEventListener('click', handleButtonClick);
-                console.log('Event listener removed.');
-            }
         } else {
             console.log('Popup container not found.');
         }
@@ -219,8 +207,12 @@
         // Restore focus on the body element
         document.body.removeAttribute('tabindex');
     }
-    console.log("Opening popup");
-    openPopup();
+    
+    function handleButtonClick() {
+        console.log("HandleButtonClick function called.");
+        console.log("Continue button clicked!");
+        closePopup();
+    }
   </script>
 
   <section id="safety" style="margin-bottom: 40px;">

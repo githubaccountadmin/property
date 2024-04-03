@@ -4,7 +4,6 @@ function openPopup() {
         .then(response => response.text())
         .then(data => {
             const popupContainer = document.createElement('div');
-            // popupContainer.id = popupContainerId; // Commented out as popupContainerId is not defined
             popupContainer.classList.add('popup-container');
             popupContainer.innerHTML = data;
     

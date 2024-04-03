@@ -191,6 +191,7 @@
             document.body.setAttribute('tabindex', '-1');
     
             console.log('Popup opened:', popupContainerId);
+            console.log('Currently focused element:', document.activeElement);
         })
         .catch(error => console.error('Error loading popup content:', error));
     }
@@ -208,6 +209,8 @@
     
         // Restore focus on the body element
         document.body.removeAttribute('tabindex');
+
+        console.log('Currently focused element:', document.activeElement);
     }
     
     console.log("Opening popup");

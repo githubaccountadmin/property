@@ -106,7 +106,6 @@ body.dark-mode {
   height: auto;
   object-fit: cover;
   object-position: center;
-  border-radius: 50%;
 }
 
 /* Circle container styles */
@@ -115,7 +114,7 @@ body.dark-mode {
   top: 20px; /* Adjust as needed */
   left: 20px; /* Adjust as needed */
   width: 200px; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
   border-radius: 50%; /* Creates a circle shape */
   overflow: hidden; /* Ensures the circles stay within the circle container */
   border: 2px solid #fff; /* Optional: adds a white border around the circle container */

@@ -140,3 +140,12 @@ body.dark-mode {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow effect */
   z-index: 9999;
 }
+
+/* Style for the photo inside the circle */
+.circle-photo {
+  width: 100%; /* Adjust width to fill circle */
+  height: 100%; /* Adjust height to fill circle */
+  object-fit: cover; /* Ensure photo covers entire circle */
+  border-radius: 50%; /* Make the image circular */
+  border: 2px solid white; /* Optional: Add a border around the circle */
+}

@@ -104,8 +104,8 @@ body.dark-mode {
 .circle {
   background-color: #5a2d8a; /* Purple color */
   color: #fff;
-  width: 150px; /* Adjust width of each circle */
-  height: 150px; /* Adjust height of each circle */
+  width: 200px; /* Adjust width of each circle */
+  height: 200px; /* Adjust height of each circle */
   border-radius: 50%; /* Create a circular shape */
   display: flex;
   justify-content: center;

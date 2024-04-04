@@ -38,16 +38,15 @@ function closePopup() {
     const popupContainer = document.querySelector('.popup-container');
     console.log('Popup container:', popupContainer);
     if (popupContainer) {
-        setTimeout(() => {
-            popupContainer.remove();
-            console.log('Popup closed.');
-        }, 100); // Delay removal by 100 milliseconds
+        popupContainer.remove();
+        console.log('Popup closed.');
     } else {
         console.log('Popup container not found.');
     }
 
     // Restore focus on the body element
     document.body.removeAttribute('tabindex');
+    document.body.focus(); // Set focus to the body element
 }
 
 // Function to handle button click action

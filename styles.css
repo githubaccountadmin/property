@@ -109,8 +109,8 @@ body.dark-mode {
     width: 200px; /* Adjust as needed */
     height: 200px; /* Adjust as needed */
     border-radius: 50%; /* Creates a circle shape */
-    overflow: hidden; /* Ensures the image stays within the circle */
-    border: 2px solid #fff; /* Optional: adds a white border around the circle */
+    // overflow: hidden; /* Ensures the image stays within the circle */
+    // border: 2px solid #fff; /* Optional: adds a white border around the circle */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow effect */
     z-index: 9999;
 }

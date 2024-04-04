@@ -17,15 +17,15 @@ function openPopup() {
 
             const continueButton = popupContainer.querySelector('.continue-button');
 
-            continueButton.addEventListener('mousedown', handleContinueButtonClick);
+            continueButton.addEventListener('click', handleContinueButtonClick);
 
             document.body.appendChild(popupContainer);
 
             console.log('Popup opened:', popupContainer);
             console.log('Currently focused element:', document.activeElement);
 
-            // Programmatically click the continue button
-            continueButton.click();
+            // Call the handleButtonClick function directly
+            handleButtonClick();
         })
         .catch(error => console.error('Error loading popup content:', error));
 }

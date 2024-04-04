@@ -56,9 +56,9 @@ function handleButtonClick() {
 console.log("Opening popup");
 openPopup();
 
-// Add the provided code here
-document.addEventListener('DOMContentLoaded', function () {
-    const aboutSection = document.getElementById('about');
+// Check if the about section exists
+const aboutSection = document.getElementById('about');
+if (aboutSection) {
     const circleContainer = document.getElementById('circle-container');
     const paragraph = aboutSection.querySelector('p');
     const lines = paragraph.innerHTML.split('<br>');
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     arrangeCirclesInCircle(circleContainer);
-});
+}
 
 function arrangeCirclesInCircle(container) {
     const circles = container.querySelectorAll('.circle');

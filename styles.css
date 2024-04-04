@@ -103,11 +103,11 @@ body.dark-mode {
 }
 
 .circle-container {
-    position: fixed;
+    position: absolute;
     top: 20px; /* Adjust as needed */
     left: 20px; /* Adjust as needed */
-    width: 100px; /* Adjust as needed */
-    height: 100px; /* Adjust as needed */
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
     border-radius: 50%; /* Creates a circle shape */
     overflow: hidden; /* Ensures the image stays within the circle */
     border: 2px solid #fff; /* Optional: adds a white border around the circle */

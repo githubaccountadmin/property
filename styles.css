@@ -102,9 +102,9 @@ body.dark-mode {
 
 /* Image inside the circle */
 .circle-image img {
-  width: 210px; /* Ensure the image fills the circle */
-  height: 210px; /* Ensure the image fills the circle */
-  object-fit: cover; /* Cover the entire circle with the image */
+  width: 100%; /* Ensure the image fills the circle */
+  height: 100%; /* Ensure the image fills the circle */
+  object-fit: fill; /* Cover the entire circle with the image */
   object-position: center; /* Center the image within the circle */
   border-radius: 50%; /* Make the image circular */
 }

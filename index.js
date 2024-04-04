@@ -33,14 +33,15 @@ function openPopup() {
         .catch(error => console.error('Error loading popup content:', error));
 }
 
-// Function to close the popup
 function closePopup() {
     console.log('Closing popup...');
     const popupContainer = document.querySelector('.popup-container');
     console.log('Popup container:', popupContainer);
     if (popupContainer) {
-        popupContainer.remove();
-        console.log('Popup closed.');
+        setTimeout(() => {
+            popupContainer.remove();
+            console.log('Popup closed.');
+        }, 100); // Delay removal by 100 milliseconds
     } else {
         console.log('Popup container not found.');
     }

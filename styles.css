@@ -100,17 +100,12 @@ body.dark-mode {
   background-color: #3f1d5a; /* Darker shade of purple */
 }
 
-/* Circle styles */
-.circle-image {
-  background-color: #5a2d8a; /* Purple color */
-  color: #fff;
-  width: 200px; /* Adjust width of each circle */
-  height: 200px; /* Adjust height of each circle */
-  border-radius: 50%; /* Create a circular shape */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
+/* Image inside the circle */
+.circle-image img {
+  width: 100%; /* Ensure the image fills the circle */
+  height: 100%; /* Ensure the image fills the circle */
+  object-fit: cover; /* Cover the entire circle with the image */
+  border-radius: 50%; /* Make the image circular */
 }
 
 /* Circle container styles */

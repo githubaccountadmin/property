@@ -126,26 +126,3 @@ body.dark-mode {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow effect */
   z-index: 9999;
 }
-
-/* Separate style for the top left circle */
-.top-left-circle-container {
-  position: absolute;
-  top: 20px; /* Adjust as needed */
-  left: 20px; /* Adjust as needed */
-  width: 100px; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
-  border-radius: 50%; /* Creates a circle shape */
-  overflow: hidden; /* Ensures the circles stay within the circle container */
-  border: 2px solid #fff; /* Optional: adds a white border around the circle container */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow effect */
-  z-index: 9999;
-}
-
-/* Style for the photo inside the circle */
-.circle-photo {
-  width: 100%; /* Adjust width to fill circle */
-  height: 100%; /* Adjust height to fill circle */
-  object-fit: cover; /* Ensure photo covers entire circle */
-  border-radius: 50%; /* Make the image circular */
-  border: 2px solid white; /* Optional: Add a border around the circle */
-}

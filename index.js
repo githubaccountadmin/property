@@ -44,9 +44,18 @@ function closePopup() {
         console.log('Popup container not found.');
     }
 
-    // Restore focus on the body element
-    document.body.removeAttribute('tabindex');
-    document.body.focus(); // Set focus to the body element
+    // Set focus to another element on the page
+    const header = document.querySelector('header');
+    if (header) {
+        header.focus();
+    } else {
+        const firstLink = document.querySelector('nav a');
+        if (firstLink) {
+            firstLink.focus();
+        } else {
+            document.body.focus(); // Fallback to body element if no other suitable element found
+        }
+    }
 }
 
 // Function to handle button click action

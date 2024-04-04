@@ -17,7 +17,7 @@ function openPopup() {
 
             const continueButton = popupContainer.querySelector('.continue-button');
 
-            continueButton.addEventListener('mousedown', handleContinueButtonClick);
+            continueButton.addEventListener('focus', handleContinueButtonClick); // Change event type to focus
 
             document.body.appendChild(popupContainer);
 

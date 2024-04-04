@@ -55,33 +55,3 @@ function handleButtonClick() {
 // Call the openPopup function to display the popup
 console.log("Opening popup");
 openPopup();
-
-// Check if the about section exists
-const aboutSection = document.getElementById('about');
-if (aboutSection) {
-    const circleContainer = document.getElementById('circle-container');
-    const paragraph = aboutSection.querySelector('p');
-    const lines = paragraph.innerHTML.split('<br>');
-
-    lines.forEach(line => {
-        const circle = document.createElement('div');
-        circle.classList.add('circle');
-        circle.innerText = line;
-        circleContainer.appendChild(circle);
-    });
-
-    arrangeCirclesInCircle(circleContainer);
-}
-
-function arrangeCirclesInCircle(container) {
-    const circles = container.querySelectorAll('.circle');
-    const radius = 200; // Adjust radius as needed
-    const angleStep = (2 * Math.PI) / circles.length;
-
-    circles.forEach((circle, index) => {
-        const angle = angleStep * index;
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
-        circle.style.transform = `translate(${x}px, ${y}px)`;
-    });
-}

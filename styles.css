@@ -101,7 +101,7 @@ body.dark-mode {
 }
 
 /* Circle styles */
-.circle {
+.circle-image {
   background-color: #5a2d8a; /* Purple color */
   color: #fff;
   width: 200px; /* Adjust width of each circle */

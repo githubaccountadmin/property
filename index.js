@@ -21,14 +21,11 @@ function openPopup() {
 
             document.body.appendChild(popupContainer);
 
-            // Set focus on the continue button
-            continueButton.focus();
-
-            // Disable focus on the body element
-            document.body.setAttribute('tabindex', '-1');
-
             console.log('Popup opened:', popupContainer);
             console.log('Currently focused element:', document.activeElement);
+
+            // Set focus on the continue button after the popup is appended
+            continueButton.focus();
         })
         .catch(error => console.error('Error loading popup content:', error));
 }
@@ -44,8 +41,8 @@ function closePopup() {
         console.log('Popup container not found.');
     }
 
-    // Set focus back to the body element
-    document.body.focus();
+    // Enable focus on the body element
+    document.body.removeAttribute('tabindex');
 }
 
 // Function to handle button click action

@@ -102,11 +102,11 @@ body.dark-mode {
 
 /* Image inside the circle */
 .circle-image img {
-  width: 100%; /* Ensure the image fills the circle */
-  height: auto; /* Ensure the image adjusts its height proportionally */
-  object-fit: cover; /* Cover the entire circle with the image */
-  object-position: center bottom; /* Center the image horizontally and align it to the bottom vertically */
-  border-radius: 50%; /* Make the image circular */
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 
 /* Circle container styles */
@@ -115,7 +115,7 @@ body.dark-mode {
   top: 20px; /* Adjust as needed */
   left: 20px; /* Adjust as needed */
   width: 200px; /* Adjust as needed */
-  height: 200px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
   border-radius: 50%; /* Creates a circle shape */
   overflow: hidden; /* Ensures the circles stay within the circle container */
   border: 2px solid #fff; /* Optional: adds a white border around the circle container */

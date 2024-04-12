@@ -138,3 +138,32 @@ body.dark-mode {
 .donate-button:hover {
   background-color: #40225f; /* Darker color on hover */
 }
+
+.property-features {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature {
+  width: 30%; /* Adjust as needed */
+  margin-right: 5%; /* Adjust spacing between features */
+  margin-bottom: 20px;
+}
+
+.feature:last-child {
+  margin-right: 0;
+}
+
+.feature img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.feature h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.feature p {
+  font-size: 0.9em;
+}

@@ -145,8 +145,8 @@ body.dark-mode {
 }
 
 .feature {
-  width: 30%; /* Adjust as needed */
-  margin-right: 5%; /* Adjust spacing between features */
+  width: calc(33.33% - 20px); /* Adjust as needed */
+  margin-right: 20px; /* Adjust spacing between features */
   margin-bottom: 20px;
 }
 
@@ -165,5 +165,5 @@ body.dark-mode {
 }
 
 .feature p {
-  font-size: 0.9em;
+  font-size: 1em;
 }

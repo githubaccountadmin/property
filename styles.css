@@ -167,3 +167,7 @@ body.dark-mode {
 .feature p {
   font-size: 1em;
 }
+
+.vision-container {
+  background-color: #f8f8f8; /* Background color of the container */
+}
